@@ -7,7 +7,7 @@ get('/') do
   erb(:index)
 end
 
-get('/output') do
-  @output = params.fetch('far').find_and_replace()
-  erb(:output)
+get('/result') do
+  @result = (params.fetch('sentence')).find_and_replace((params.fetch('word')), (params.fetch('replace')))
+  erb(:result)
 end
